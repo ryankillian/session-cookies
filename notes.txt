@@ -5,3 +5,6 @@ npx tsconfig.json
 yarn add pg typeorm bcryptjs
 yarn add -D @types/bcryptjs
 yarn add class-validator
+
+yarn add connect-redis express-session ioredis cors
+yarn add -D @types/connect-redis @types/express-session @types/ioredis @types/cors
