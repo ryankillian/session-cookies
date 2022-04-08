@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
-import { buildSchema } from "type-graphql";
+import { buildSchema, format } from "type-graphql";
 
 import { AppDataSource } from "./data-source";
 import { RegisterResolver } from "./modules/user/Register";
