@@ -11,6 +11,7 @@ import { AppDataSource } from "./data-source";
 import { RegisterResolver } from "./modules/user/Register";
 import { redis } from "./redis";
 import { LoginResolver } from "./modules/user/Login";
+import { MeResolver } from "./modules/user/Me";
 
 declare module "express-session" {
   interface SessionData {
@@ -21,7 +22,7 @@ const main = async () => {
   await AppDataSource.initialize();
 
   const schema = await buildSchema({
-    resolvers: [RegisterResolver, LoginResolver],
+    resolvers: [RegisterResolver, LoginResolver, MeResolver],
     emitSchemaFile: true,
   });
 
