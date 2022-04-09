@@ -13,6 +13,8 @@ import { redis } from "./redis";
 import { LoginResolver } from "./modules/user/Login";
 import { MeResolver } from "./modules/user/Me";
 import { ConfirmUserResolver } from "./modules/user/ConfirmUser";
+import { ForgotPasswordResolver } from "./modules/user/ForgotPassword";
+import { ChangePasswordResolver } from "./modules/user/ChangePassword";
 
 declare module "express-session" {
   interface SessionData {
@@ -28,6 +30,8 @@ const main = async () => {
       LoginResolver,
       MeResolver,
       ConfirmUserResolver,
+      ForgotPasswordResolver,
+      ChangePasswordResolver,
     ],
     emitSchemaFile: true,
     // authChecker: ({ context: { req } }) => {
