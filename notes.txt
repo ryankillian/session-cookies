@@ -8,3 +8,6 @@ yarn add class-validator
 
 yarn add connect-redis express-session ioredis cors
 yarn add -D @types/connect-redis @types/express-session @types/ioredis @types/cors
+
+yarn add nodemailer uuid
+yarn add -D @types/nodemailer @types/uuid

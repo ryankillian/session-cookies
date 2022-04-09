@@ -1,10 +1,12 @@
 import bcrypt from "bcryptjs";
-import { Arg, Ctx, Mutation, Resolver } from "type-graphql";
+import { Arg, Ctx, Mutation, Resolver, UseMiddleware } from "type-graphql";
 import { User } from "../../entity/User";
 import { MyContext } from "../../types/MyContext";
+import { logger } from "../middleware/logger";
 
 @Resolver()
 export class LoginResolver {
+  @UseMiddleware(logger)
   @Mutation(() => User, { nullable: true })
   async login(
     @Arg("email") email: string,
